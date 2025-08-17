@@ -71,5 +71,5 @@ if st.button("China's Summary"):
 
 
 st.subheader("Extra Credit Plot")
-st.write("Since China grew and became the largest emittor, let's take a closer look to see their percentage of emissions in the whole world. How much of the world's emissions comes from China?"
+st.write("Since China grew and became the largest emittor, let's take a closer look to see their percentage of emissions in the whole world. How much of the world's emissions comes from China?")
 st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/8e7230c9383930f1a3c76ed46c23a19a0b7ad855/images/extra_credit.png")
