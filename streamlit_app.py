@@ -7,9 +7,10 @@ st.write("Explore the relationships between and progression of CO₂ Emissions, 
 
 # Define the URLs for your pre-rendered PNG files on GitHub.
 CO2_temp_US_scaled_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/05019b5d28930c546e6d3e7f9e5e4cc70a822ec9/images/CO2_temp_US_scaled.png"
-CO2_temp_US_facet_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/d3f902e6facd88596ae1367741663ba9119887/images/CO2_temp_US_facet.png"
+CO2_temp_US_facet_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/blob/14edbf5fd5a7a10e6439859214b7b11cffdf4766/images/CO2_temp_US_facet.png"
 CO2_temp_China_scaled_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/f33a4475b5df43e25839cbf0a420960f32f3bc8e/images/CO2_temp_China_scaled.png"
 CO2_temp_China_facet_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/8c94c7c43a14d595c92ecaaa56b4f172809653d3/images/CO2_temp_China_facet%20(1).png"
+
 
 # Create a selectbox (dropdown menu) to choose the plot to display
 chart_options = [
