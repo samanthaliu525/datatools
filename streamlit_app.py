@@ -85,7 +85,6 @@ def load_data():
     with st.spinner('Loading data from GitHub...'):
         try:
             co2_long_df = pd.read_csv(CO2_LONG_URL)
-            st.success("Successfully loaded CO2 long data.")
             return co2_long_df
         except Exception as e:
             st.error(f"Error loading data from GitHub: {e}")
