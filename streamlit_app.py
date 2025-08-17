@@ -10,6 +10,10 @@ CO2_temp_US_scaled_url = "https://raw.githubusercontent.com/samanthaliu525/datat
 CO2_temp_US_facet_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/14edbf5fd5a7a10e6439859214b7b11cffdf4766/images/CO2_temp_US_facet.png"
 CO2_temp_China_scaled_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/f33a4475b5df43e25839cbf0a420960f32f3bc8e/images/CO2_temp_China_scaled.png"
 CO2_temp_China_facet_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/8c94c7c43a14d595c92ecaaa56b4f172809653d3/images/CO2_temp_China_facet%20(1).png"
+CO2_temp_China_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/1e94ffab0bc46b03d796b814f10bd82fc80fd299/images/CO2_temp_China.png"
+CO2_temp_US_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/c356f4e5f29b367949fb6ec2837dcf4091f8c948/images/CO2_temp_US.png"
+China_facet_plot_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/c356f4e5f29b367949fb6ec2837dcf4091f8c948/images/China_facet_plot.png"
+US_facet_plot_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/c356f4e5f29b367949fb6ec2837dcf4091f8c948/images/US_facet_plot.png"
 
 
 # Create a selectbox (dropdown menu) to choose the plot to display
@@ -17,7 +21,11 @@ chart_options = [
     "US Scaled",
     "US Facet",
     "China Scaled",
-    "China Facet"
+    "China Facet",
+    "CO2 vs. Temp China",
+    "CO2 vs. Temp US",
+    "China Facet Plot",
+    "US Facet Plot"
 ]
 
 selected_chart = st.selectbox("Select a chart to view:", chart_options)
@@ -31,3 +39,12 @@ elif selected_chart == "China Scaled":
     st.image(CO2_temp_China_scaled_url, caption="China - Scaled")
 elif selected_chart == "China Facet":
     st.image(CO2_temp_China_facet_url, caption="China - Facet")
+elif selected_chart == "CO2 vs. Temp China":
+    st.image(CO2_temp_China_url, caption="CO2 vs. Temperature for China")
+elif selected_chart == "CO2 vs. Temp US":
+    st.image(CO2_temp_US_url, caption="CO2 vs. Temperature for US")
+elif selected_chart == "China Facet Plot":
+    st.image(China_facet_plot_url, caption="China Facet Plot")
+elif selected_chart == "US Facet Plot":
+    st.image(US_facet_plot_url, caption="US Facet Plot")
+
