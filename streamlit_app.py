@@ -78,11 +78,49 @@ st.title("China's CO₂ Emissions as % of Global Total")
 st.header("Interactive Matplotlib Plot with Slider")
 
 
-CO2_long = pd.read_csv("https://raw.githubusercontent.com/samanthaliu525/datatools/refs/heads/main/data/CO2_world_clean.csv")
+CO2_LONG_URL = "https://raw.githubusercontent.com/samanthaliu525/datatools/refs/heads/main/data/CO2_world_clean.csv"
+
+@st.cache_data
+def load_data():
+    """
+    Loads the CO2 data from the GitHub repository.
+    """
+    with st.spinner('Loading data from GitHub...'):
+        try:
+            co2_long_df = pd.read_csv(CO2_LONG_URL)
+            st.success("Successfully loaded CO2 long data.")
+            return co2_long_df
+        except Exception as e:
+            st.error(f"Error loading data from GitHub: {e}")
+            st.info("Creating dummy data for demonstration.")
+            co2_long_df = pd.DataFrame({
+                'Year': list(range(1751, 2015)),
+                'Emissions': np.random.rand(264) * 1000,
+                'Country': ['China'] * 264
+            })
+            return co2_long_df
+
+# Load the data
+CO2_long = load_data()
+
+
+# --- Part 2: Building the Streamlit Dashboard UI ---
+st.title("China's CO₂ Emissions as % of Global Total")
+st.header("Interactive Matplotlib Plot with Slider")
+
 # --- Part 3: Create the interactive plot logic ---
-# Clean the data to ensure it's in the correct format
+# Global yearly CO2 emissions, created from co2_long
+co2_world = (CO2_long
+             .groupby("Year", as_index=False)["Emissions"]
+             .sum()
+             .rename(columns={"Emissions": "CO2_World"}))
+
+# China yearly CO2 emissions
 co2_china = CO2_long[CO2_long["Country"] == "China"].copy()
+# Merge China with world totals
 co2_ratio = pd.merge(co2_china, co2_world, on="Year", how="inner")
+
+# Compute percentage
 co2_ratio["China_%_World"] = (co2_ratio["Emissions"] / co2_ratio["CO2_World"]) * 100
 
 # Create a slider to filter the data by year
