@@ -70,13 +70,9 @@ if st.button("China's Summary"):
     st.write("By looking at these graphs, we can see that the overall CO2 emissions have increased over the years. There are some countries that rapdily increased their emissions, like China, while others—mainly the developed countries—have remained a high emittor throughout the time period.")
     st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/5cc3bd8a20a55a9f1c77c874bfcb34d357d847a6/images/China_mainplot_combined.png")
 
-
+# Extra Credit Interactive Plot
 st.subheader("Extra Credit Plot")
 st.write("Since China grew and became the largest emittor, let's take a closer look to see their percentage of emissions in the whole world. How much of the world's emissions comes from China?")
-st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/8e7230c9383930f1a3c76ed46c23a19a0b7ad855/images/extra_credit.png")
-
-st.title("China's CO₂ Emissions as % of Global Total")
-st.header("Interactive Matplotlib Plot with Slider")
 
 
 CO2_LONG_URL = "https://raw.githubusercontent.com/samanthaliu525/datatools/refs/heads/main/data/CO2_world_clean.csv"
