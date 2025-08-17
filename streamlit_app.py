@@ -78,7 +78,7 @@ st.title("China's CO₂ Emissions as % of Global Total")
 st.header("Interactive Matplotlib Plot with Slider")
 
 
-CO2_long = "https://raw.githubusercontent.com/samanthaliu525/datatools/refs/heads/main/data/CO2_world_clean.csv"
+CO2_long = pd.read_csv("https://raw.githubusercontent.com/samanthaliu525/datatools/refs/heads/main/data/CO2_world_clean.csv")
 # --- Part 3: Create the interactive plot logic ---
 # Clean the data to ensure it's in the correct format
 co2_china = CO2_long[CO2_long["Country"] == "China"].copy()
