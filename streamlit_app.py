@@ -5,6 +5,14 @@ import numpy as np
 st.title("Data Tools Dashboard")
 st.write("Explore the relationships between and progression of CO₂ Emissions, temperature, GDP per capita, energy use, and number of natural disasters")
 
+st.subheader("CO2 World Emissions")
+st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/35db4e3e1df941e2333d0c21315c6279df0fa90c/images/CO2_world.png")
+
+st.subheader("CO2 Emissions Tile Plot")
+st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/35db4e3e1df941e2333d0c21315c6279df0fa90c/images/CO2_tile.png")
+
+
+st.subheader("US vs. China with different graphs")
 # Define the URLs for your pre-rendered PNG files on GitHub.
 CO2_temp_US_scaled_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/05019b5d28930c546e6d3e7f9e5e4cc70a822ec9/images/CO2_temp_US_scaled.png"
 CO2_temp_US_facet_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/14edbf5fd5a7a10e6439859214b7b11cffdf4766/images/CO2_temp_US_facet.png"
@@ -47,4 +55,12 @@ elif selected_chart == "China Facet Plot":
     st.image(China_facet_plot_url, caption="China Facet Plot")
 elif selected_chart == "US Facet Plot":
     st.image(US_facet_plot_url, caption="US Facet Plot")
+
+
+
+if st.button("United States Summary"):
+    st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/35db4e3e1df941e2333d0c21315c6279df0fa90c/images/mainplot_combined.png")
+
+if st.button("China's Summary"):
+    st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/5cc3bd8a20a55a9f1c77c874bfcb34d357d847a6/images/China_mainplot_combined.png")
 
