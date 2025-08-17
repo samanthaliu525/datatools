@@ -6,13 +6,16 @@ st.title("Data Tools Dashboard")
 st.write("Explore the relationships between and progression of CO₂ Emissions, temperature, GDP per capita, energy use, and number of natural disasters")
 
 st.subheader("CO2 World Emissions")
+st.write("This is the overall world's CO2 emissions from 1751-2014. We can see the great increase in emission levels as the world became more industrialized. Note that this is limited to the countries that report their data.")
 st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/35db4e3e1df941e2333d0c21315c6279df0fa90c/images/CO2_world.png")
 
 st.subheader("CO2 Emissions Tile Plot")
+st.write("Let's take a look at our top 10 emittors in 2014, and how their emission levels progressed overtime. The labels of the countries go from the highest emittor in 2014 and descends.")
 st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/35db4e3e1df941e2333d0c21315c6279df0fa90c/images/CO2_tile.png")
 
 
 st.subheader("US vs. China with different graphs")
+st.write("Choose which graphs you want to see that are specific to the US or China. Most of the graphs are comparing emissions and temperature, but the last two dropdown items are looking at natural disasters, GDP, and energy usage.")
 # Define the URLs for your pre-rendered PNG files on GitHub.
 CO2_temp_US_scaled_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/05019b5d28930c546e6d3e7f9e5e4cc70a822ec9/images/CO2_temp_US_scaled.png"
 CO2_temp_US_facet_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/14edbf5fd5a7a10e6439859214b7b11cffdf4766/images/CO2_temp_US_facet.png"
@@ -57,10 +60,16 @@ elif selected_chart == "US Facet Plot":
     st.image(US_facet_plot_url, caption="US Facet Plot")
 
 
-
+st.subheader("Summary Plots")
 if st.button("United States Summary"):
+    st.write("By looking at the graphs, we can tell that the US has remained one of the highest emitting country, which we can see clearly from the tile plot. It was the highest out of the top ten countries in 2014, but China in the past fifty years has surpassed the US. From outside knowledge, we know that is correlated with their growing GDP and becoming an increasingly developed nation. There is some correlation between more CO2 emissions and temperature, but we cannot determine if it's causually correlated. It does seem like CO2 emissions in the US are associated with higher temperatures and more natural disasters since the temperatures and disasters graphs have been increasing—at least in the past 50 years since we don't have all the data before then")
     st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/35db4e3e1df941e2333d0c21315c6279df0fa90c/images/mainplot_combined.png")
 
 if st.button("China's Summary"):
+    st.write("By looking at these graphs, we can see that the overall CO2 emissions have increased over the years. There are some countries that rapdily increased their emissions, like China, while others—mainly the developed countries—have remained a high emittor throughout the time period.")
     st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/5cc3bd8a20a55a9f1c77c874bfcb34d357d847a6/images/China_mainplot_combined.png")
 
+
+st.subheader("Extra Credit Plot")
+st.write("Since China grew and became the largest emittor, let's take a closer look to see their percentage of emissions in the whole world. How much of the world's emissions comes from China?"
+st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/8e7230c9383930f1a3c76ed46c23a19a0b7ad855/images/extra_credit.png")
