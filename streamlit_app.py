@@ -100,11 +100,8 @@ def load_data():
 CO2_long = load_data()
 
 
-# --- Part 2: Building the Streamlit Dashboard UI ---
-st.title("China's CO₂ Emissions as % of Global Total")
-st.header("Interactive Matplotlib Plot with Slider")
 
-# --- Part 3: Create the interactive plot logic ---
+# --- Part 2: Create the interactive plot logic ---
 # Global yearly CO2 emissions, created from co2_long
 co2_world = (CO2_long
              .groupby("Year", as_index=False)["Emissions"]
@@ -134,7 +131,7 @@ start_year, end_year = st.slider(
 filtered_df = co2_ratio[(co2_ratio["Year"] >= start_year) & (co2_ratio["Year"] <= end_year)]
 
 
-# --- Part 4: Display the Matplotlib plot in Streamlit ---
+# --- Part 3: Display the Matplotlib plot in Streamlit ---
 # Create the Matplotlib plot using the filtered data
 fig, ax = plt.subplots(figsize=(10, 6))
 ax.plot(filtered_df["Year"], filtered_df["China_%_World"], marker="o", label="China's Share of World CO₂")
