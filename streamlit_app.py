@@ -19,8 +19,8 @@ US_facet_plot_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/
 # Create a selectbox (dropdown menu) to choose the plot to display
 chart_options = [
     "US Scaled",
-    "US Facet",
     "China Scaled",
+    "US Facet",
     "China Facet",
     "CO2 vs. Temp China",
     "CO2 vs. Temp US",
