@@ -73,3 +73,38 @@ if st.button("China's Summary"):
 st.subheader("Extra Credit Plot")
 st.write("Since China grew and became the largest emittor, let's take a closer look to see their percentage of emissions in the whole world. How much of the world's emissions comes from China?")
 st.image("https://raw.githubusercontent.com/samanthaliu525/datatools/8e7230c9383930f1a3c76ed46c23a19a0b7ad855/images/extra_credit.png")
+
+st.title("China's CO₂ Emissions as % of Global Total")
+st.header("Interactive Matplotlib Plot with Slider")
+
+# --- Part 3: Create the interactive plot logic ---
+# Clean the data to ensure it's in the correct format
+co2_china = CO2_long[CO2_long["Country"] == "China"].copy()
+co2_ratio = pd.merge(co2_china, co2_world, on="Year", how="inner")
+co2_ratio["China_%_World"] = (co2_ratio["Emissions"] / co2_ratio["CO2_World"]) * 100
+
+# Create a slider to filter the data by year
+min_year = int(co2_ratio['Year'].min())
+max_year = int(co2_ratio['Year'].max())
+
+start_year, end_year = st.slider(
+    "Select a year range:",
+    min_value=min_year,
+    max_value=max_year,
+    value=(min_year, max_year)
+)
+
+# Filter the dataframe based on the slider's selection
+filtered_df = co2_ratio[(co2_ratio["Year"] >= start_year) & (co2_ratio["Year"] <= end_year)]
+
+
+# --- Part 4: Display the Matplotlib plot in Streamlit ---
+# Create the Matplotlib plot using the filtered data
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.plot(filtered_df["Year"], filtered_df["China_%_World"], marker="o", label="China's Share of World CO₂")
+ax.set_xlabel("Year")
+ax.set_ylabel("China's % of World CO₂")
+ax.set_title(f"China's CO₂ Emissions as % of Global Total ({start_year}-{end_year})")
+ax.legend()
+ax.grid(True)
+st.pyplot(fig)
