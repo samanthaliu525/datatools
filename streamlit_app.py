@@ -7,7 +7,7 @@ st.write("Explore the relationships between and progression of CO₂ Emissions, 
 
 st.subheader('Emissions and Temperature')
 CO2_temp_US_facet_url = "https://raw.githubusercontent.com/samanthaliu525/datatoolsdashboard/d3f902e6facd88596ae1367741663ba9119887/CO2_temp_US_facet.png"
-CO2_temp_China_facet_url = 'https://raw.githubusercontent.com/samanthaliu525/datatoolsdashboard/588861cbce38e704a91563c9daf4281188067556/CO2_temp_China_facet%20(1).png'
+CO2_temp_China_facet_url = "https://raw.githubusercontent.com/samanthaliu525/datatools/8c94c7c43a14d595c92ecaaa56b4f172809653d3/images/CO2_temp_China_facet%20(1).png"
 
 # Create buttons to choose the plot to display
 col1, col2 = st.columns(2)
